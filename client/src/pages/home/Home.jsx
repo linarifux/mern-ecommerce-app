@@ -1,7 +1,12 @@
-import React from 'react'
 import './home.css'
 
+import Products from '../../components/Products'
+import data from '../../data'
+import Newsletter from '../../components/Newsletter'
+import ReadBlog from '../../components/ReadBlog'
+
 const Home = () => {
+  const featuredProducts = data.filter(product => product.featured)
   return (
     <div className="home">
       <section id="home">
@@ -17,8 +22,19 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="feature">
+      <section className="feature container">
         <div className="section-title">Feature Products</div>
+        <div className="section-subtitle text-center h5">Most sold and recommended products of our store.</div>
+        <div className="products-area">
+          <Products products={featuredProducts} />
+          {console.log(featuredProducts)}
+        </div>
+      </section>
+      <section className="newsletter container">
+        <Newsletter />
+      </section>
+      <section className="read-blog container">
+        <ReadBlog />
       </section>
     </div>
   )

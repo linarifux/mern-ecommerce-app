@@ -1,5 +1,6 @@
 import React from 'react'
 import MyLogo from '../assets/logo.png'
+import {BsCart} from 'react-icons/bs'
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -18,6 +19,7 @@ const Mynav = () => {
             <Nav.Link href="#link">APPAREL</Nav.Link>
             <Nav.Link href="#link">ACCESSORIES</Nav.Link>
             <Nav.Link href="#link">FOOTWEAR</Nav.Link>
+            <Nav.Link href="#cart"><BsCart className='cart'/></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
