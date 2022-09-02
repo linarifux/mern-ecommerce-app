@@ -8,7 +8,7 @@ import ReadBlog from '../../components/ReadBlog'
 const Home = () => {
   const featuredProducts = data.filter(product => product.featured)
   return (
-    <div className="home">
+    <div className="home pages">
       <section id="home">
         <div className="hero">
           <div className="text-area">
@@ -27,7 +27,6 @@ const Home = () => {
         <div className="section-subtitle text-center h5">Most sold and recommended products of our store.</div>
         <div className="products-area">
           <Products products={featuredProducts} />
-          {console.log(featuredProducts)}
         </div>
       </section>
       <section className="newsletter container">

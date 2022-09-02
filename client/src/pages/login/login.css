@@ -1,0 +1,10 @@
+.login > .form-group > form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+}
+
+button{
+    margin: 1rem 0;
+}

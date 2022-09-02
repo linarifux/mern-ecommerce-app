@@ -2,20 +2,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Mynav from './components/Mynav';
 
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home';
 import Footer from './components/Footer';
+import ShopAll from './pages/ShopAll';
+import Apparel from './pages/Apparel';
+import Accessories from './pages/Accessories';
+import Footwear from './pages/Footwear';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 
 function App() {
   return (
     <>
-      <Mynav />
       <Router>
+        <Mynav />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/shop-all' element={<ShopAll />} />
+          <Route path='/apparel' element={<Apparel />} />
+          <Route path='/accessories' element={<Accessories />} />
+          <Route path='/footwear' element={<Footwear />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </>
   );
 }

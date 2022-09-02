@@ -1,10 +1,13 @@
 import React from 'react'
 import MyLogo from '../assets/logo.png'
-import {BsCart} from 'react-icons/bs'
+import { BsCart, BsPerson } from 'react-icons/bs'
+import { RiArrowDownSFill} from 'react-icons/ri'
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
+import { NavDropdown } from 'react-bootstrap';
 
 const Mynav = () => {
   return (
@@ -14,12 +17,16 @@ const Mynav = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-5">
-            <Nav.Link href="#home">HOME</Nav.Link>
-            <Nav.Link href="#link">SHOP ALL</Nav.Link>
-            <Nav.Link href="#link">APPAREL</Nav.Link>
-            <Nav.Link href="#link">ACCESSORIES</Nav.Link>
-            <Nav.Link href="#link">FOOTWEAR</Nav.Link>
-            <Nav.Link href="#cart"><BsCart className='cart'/></Nav.Link>
+            <Nav.Link><Link to={'/'} style={{ color: 'inherit' }}>HOME</Link></Nav.Link>
+            <Nav.Link><Link to={'/shop-all'} style={{ color: 'inherit' }}>SHOP ALL</Link></Nav.Link>
+            <Nav.Link><Link to={'/apparel'} style={{ color: 'inherit' }}>APPAREL</Link></Nav.Link>
+            <Nav.Link><Link to={'/accessories'} style={{ color: 'inherit' }}>ACCESSORIES</Link></Nav.Link>
+            <Nav.Link><Link to={'/footwear'} style={{ color: 'inherit' }}>FOOTWEAR</Link></Nav.Link>
+            <NavDropdown title={<BsPerson className='cart'/>}>
+              <NavDropdown.Item><Link to={'/login'} style={{ color: 'inherit' }}>Login</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to={'/signup'} style={{ color: 'inherit' }}>Signup</Link></NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link><BsCart className='cart' /></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

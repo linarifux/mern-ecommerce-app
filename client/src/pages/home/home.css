@@ -72,6 +72,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 15rem;
 }
 
 .blog-image{
@@ -84,6 +85,7 @@ section{
 }
 
 .footer{
+    margin-top: auto;
     background-color: #000;
     margin-bottom: 0;
     padding: 1rem 0;
