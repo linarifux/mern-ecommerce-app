@@ -31,29 +31,6 @@ section{
     text-align: center;
 }
 
-.products-area{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  margin-top: 2rem;
-}
-
-.image{
-    margin: 0 auto;
-}
-
-.product-image{
-    height: 300px;
-    margin: 0 auto;
-}
-
-.product{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .letter{
     text-align: center;
 }
@@ -125,6 +102,21 @@ a{
 
 
 @media screen and (max-width: 768px){
+
+    .hero{
+        height: 720px;
+        width: 100%;
+        background-image: url('../../assets/hero.jpg') ;
+        background-size: cover no-repeat;
+    }
+    
+    .text-area{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     .letter{
         width: 100%;
         margin: 0 auto;
@@ -142,5 +134,41 @@ a{
     }
     input{
         margin-bottom: 1rem;
+    }
+
+    .blog{
+        margin-bottom: 5rem;
+        display: block;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .blog-image{
+        border-radius: 10px;
+        width: 350px;
+        height: 250px;
+    }
+    .h1{
+        font-size: 25px;
+    }
+
+    .brand{
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .blog{
+        margin-bottom: 5rem;
+        display: block;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .blog-image{
+        border-radius: 10px;
+        width: 350px;
+        height: 250px;
     }
 }

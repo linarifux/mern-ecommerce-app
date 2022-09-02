@@ -7,7 +7,7 @@ const ShopAll = () => {
     <section className="shop-all pages container">
       <p className="h1 text-center my-5">All Products</p>
       <div className="products-area">
-      <Products products={data}/>
+        <Products products={data} />
       </div>
     </section>
   )

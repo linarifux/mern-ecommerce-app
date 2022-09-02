@@ -5,7 +5,7 @@ const ReadBlog = () => {
   return (
     <div className="blog shadow rounded">
       <div className="text-section">
-        <p className="h1">Catch up with VOID PRODUCTIONS</p>
+        <p className="h1">Catch up with <span className='brand'>VOID PRODUCTIONS</span></p>
         <p>Read about the latest products, company news, our customer favorites, and more!</p>
         <button className="btn btn-large btn-dark">READ OUR BLOG</button>
       </div>
