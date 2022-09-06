@@ -52,4 +52,17 @@ const updateProductById = async (req, res) => {
 }
 
 
-module.exports = { createProduct, getAllProducts, getOneProductById, updateProductById }
+const deleteProductById = async (req, res) => {
+    try{
+        const product = await Product.findByIdAndDelete(req.params.id)
+        if(!product){
+            return res.status(404).send('No record found!')
+        }
+        res.status(201).send(product)
+    }catch(e){
+        res.status(500).send(e)
+    }
+}
+
+
+module.exports = { createProduct, getAllProducts, getOneProductById, updateProductById, deleteProductById }

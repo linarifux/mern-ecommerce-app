@@ -1,12 +1,28 @@
 import './home.css'
-
+import axios from 'axios'
 import Products from '../../components/Products'
-import data from '../../data'
 import Newsletter from '../../components/Newsletter'
 import ReadBlog from '../../components/ReadBlog'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import Loading from '../../components/Loading'
+import { setProducts } from '../../redux/actions/productActions'
 
 const Home = () => {
-  const featuredProducts = data.filter(product => product.featured)
+  const dispatch = useDispatch()
+
+  const fetchProducts = () => {
+    axios('http://localhost:8000/products/all')
+      .then(response => dispatch(setProducts(response.data)))
+      .catch(error => console.log('error fetching data', error))
+  }
+
+  const products = useSelector(state => state.allProducts)
+
+  useEffect(() => {
+    fetchProducts()
+  }, [])
+
   return (
     <div className="home pages">
       <section id="home">
@@ -26,7 +42,7 @@ const Home = () => {
         <div className="section-title">Feature Products</div>
         <div className="section-subtitle text-center h5">Most sold and recommended products of our store.</div>
         <div className="products-area">
-          <Products products={featuredProducts} />
+          {products ? <Products products={products} /> : <Loading />}
         </div>
       </section>
       <section className="newsletter container">

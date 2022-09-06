@@ -7,22 +7,20 @@ const app = express()
 const productRoute = require('./router/productRoute')
 
 
-// product schema 
-const { Product } = require('./model/productModel')
-
 /// database connection
 const connectToDb = require('./util/db')
 
 connectToDb()
 
-// cross browser compatibility
-cors()
+
 
 // defining port
 const port = process.env.PORT || 5000
 
 // json parser
 app.use(express.json())
+// cross browser compatibility
+app.use(cors())
 
 
 // routes
