@@ -12,6 +12,7 @@ import Footwear from './pages/Footwear';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import ProductDetails from './pages/productDetails/ProductDetails';
+import Gadgets from './pages/Gadgets';
 function App() {
 
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/apparel' element={<Apparel />} />
           <Route path='/accessories' element={<Accessories />} />
           <Route path='/footwear' element={<Footwear />} />
+          <Route path='/gadgets' element={<Gadgets />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path={`/product/:productId`} element={<ProductDetails />} />

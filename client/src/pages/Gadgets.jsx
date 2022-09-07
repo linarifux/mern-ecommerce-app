@@ -6,7 +6,7 @@ import NoProductsFound from '../components/NoProductsFound'
 import Products from '../components/Products'
 import { setProducts } from '../redux/actions/productActions'
 
-const Accessories = () => {
+const Gadgets = () => {
   const dispatch = useDispatch()
 
   const fetchProducts = () => {
@@ -16,15 +16,15 @@ const Accessories = () => {
   }
 
   const products = useSelector(state => state.allProducts)
-  const filteredProducts = products.filter(product => product.category === 'accessories')
+  const filteredProducts = products.filter(product => product.category === 'gadgets')
 
   useEffect(() => {
     fetchProducts()
   }, [])
 
   return (
-    <section className="accessories pages container">
-      <p className="h1 text-center my-5">Accessories</p>
+    <section className="gadgets pages container">
+      <p className="h1 text-center my-5">Gadgets</p>
       <div className="products-area">
         {!products && <Loading />}
         {filteredProducts.length !== 0 ? <Products products={filteredProducts} /> : <NoProductsFound />}
@@ -33,4 +33,4 @@ const Accessories = () => {
   )
 }
 
-export default Accessories
+export default Gadgets

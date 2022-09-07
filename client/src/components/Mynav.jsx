@@ -1,7 +1,7 @@
 import React from 'react'
 import MyLogo from '../assets/logo.png'
 import { BsCart, BsPerson } from 'react-icons/bs'
-import { RiArrowDownSFill} from 'react-icons/ri'
+import { RiArrowDownSFill } from 'react-icons/ri'
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -17,14 +17,15 @@ const Mynav = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-5">
-            <Nav.Link><Link to={'/'} style={{ color: 'inherit' }}>HOME</Link></Nav.Link>
-            <Nav.Link><Link to={'/shop-all'} style={{ color: 'inherit' }}>SHOP ALL</Link></Nav.Link>
-            <Nav.Link><Link to={'/apparel'} style={{ color: 'inherit' }}>APPAREL</Link></Nav.Link>
-            <Nav.Link><Link to={'/accessories'} style={{ color: 'inherit' }}>ACCESSORIES</Link></Nav.Link>
-            <Nav.Link><Link to={'/footwear'} style={{ color: 'inherit' }}>FOOTWEAR</Link></Nav.Link>
-            <NavDropdown title={<BsPerson className='cart'/>}>
-              <NavDropdown.Item><Link to={'/login'} style={{ color: 'inherit' }}>Login</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to={'/signup'} style={{ color: 'inherit' }}>Signup</Link></NavDropdown.Item>
+            <Nav.Link as={Link} to='/'>Home</Nav.Link>
+            <Nav.Link as={Link} to='/shop-all'>SHOP ALL</Nav.Link>
+            <Nav.Link as={Link} to='/apparel'>APPAREL</Nav.Link>
+            <Nav.Link as={Link} to='/accessories'>ACCESSORIES</Nav.Link>
+            <Nav.Link as={Link} to='/footwear'>FOOTWEAR</Nav.Link>
+            <Nav.Link as={Link} to='/gadgets'>GADGETS</Nav.Link>
+            <NavDropdown title={<BsPerson className='cart' />}>
+              <NavDropdown.Item as={Link} to='/login'>Login</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/signup' >Signup</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link><BsCart className='cart' /></Nav.Link>
           </Nav>

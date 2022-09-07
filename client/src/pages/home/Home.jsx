@@ -18,6 +18,7 @@ const Home = () => {
   }
 
   const products = useSelector(state => state.allProducts)
+  const filteredProducts = products.filter(product => product.featured === true)
 
   useEffect(() => {
     fetchProducts()
@@ -42,7 +43,7 @@ const Home = () => {
         <div className="section-title">Feature Products</div>
         <div className="section-subtitle text-center h5">Most sold and recommended products of our store.</div>
         <div className="products-area">
-          {products ? <Products products={products} /> : <Loading />}
+          {filteredProducts ? <Products products={filteredProducts} /> : <Loading />}
         </div>
       </section>
       <section className="newsletter container">

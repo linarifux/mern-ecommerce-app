@@ -1,14 +1,34 @@
+import axios from 'axios'
 import React from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import Loading from '../components/Loading'
+import NoProductsFound from '../components/NoProductsFound'
 import Products from '../components/Products'
-import data from '../data'
+import { setProducts } from '../redux/actions/productActions'
 
 const Footwear = () => {
-  const footwear = data.filter(product => product.category === 'footwear')
+  const dispatch = useDispatch()
+
+  const fetchProducts = () => {
+    axios('http://localhost:8000/products/all')
+      .then(response => dispatch(setProducts(response.data)))
+      .catch(error => console.log('error fetching data', error))
+  }
+
+  const products = useSelector(state => state.allProducts)
+  const filteredProducts = products.filter(product => product.category === 'footwear')
+
+  useEffect(() => {
+    fetchProducts()
+  }, [])
+
   return (
     <section className="footwear pages container">
       <p className="h1 text-center my-5">Footwear</p>
       <div className="products-area">
-        <Products products={footwear} />
+        {!products && <Loading />}
+        {filteredProducts.length !== 0 ? <Products products={filteredProducts} /> : <NoProductsFound />}
       </div>
     </section>
   )
