@@ -19,3 +19,13 @@ export const selectedProductReducer = (state={}, {type, payload}) => {
             return state;
     }
 }
+
+export const setCurrentUserReducer = (state={}, {type, payload}) => {
+    switch (type) {
+        case actionTypes.SET_CURRENT_USER:
+            return payload
+
+        default:
+            return state;
+    }
+}
