@@ -66,6 +66,7 @@ section{
     background-color: #000;
     margin-bottom: 0;
     padding: 1rem 0;
+    overflow: hidden;
 }
 
 .footer-top{

@@ -6,6 +6,9 @@ const app = express()
 // product route
 const productRoute = require('./router/productRoute')
 
+// User route 
+const userRoute = require('./router/userRoute')
+
 
 /// database connection
 const connectToDb = require('./util/db')
@@ -26,6 +29,8 @@ app.use(cors())
 // routes
 // product route
 app.use('/products', productRoute )
+// user route
+app.use('/user', userRoute)
 
 
 

@@ -16,7 +16,7 @@ const ProductDetails = () => {
 
   setTimeout(() => {
     setLoading(false)
-  }, 500)
+  }, 1000)
 
   const dispatch = useDispatch()
   const { productId } = useParams()

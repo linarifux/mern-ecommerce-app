@@ -3,10 +3,20 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -65%);
+    overflow: hidden;
 }
 
 button {
     margin: 1rem 0;
+}
+
+.signup .action-buttons{
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.signup .action-buttons > .btn{
+    margin: 0;
 }
 
 @media screen and (max-width: 768px) {
