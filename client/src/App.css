@@ -65,6 +65,32 @@
   transform: translate(-50%, -50%);
 }
 
+.warning{
+  background-color: rgb(110, 23, 23);
+  color: #fff;
+  text-align: center;
+  padding: .5rem;
+  border-radius: 5px;
+}
+
+.spinner{
+  height: 7rem;
+  width: 7rem;
+  color: aqua;
+  border: .75rem solid #d4dbff;
+  border-radius: 50%;
+  text-align: center;
+  border-top-color: #6271c6;
+  margin: 0 auto;
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  to{
+      transform: rotate(1turn);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .products-area {
     display: block;

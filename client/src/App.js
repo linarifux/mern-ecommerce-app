@@ -14,6 +14,9 @@ import Signup from './pages/signup/Signup';
 import ProductDetails from './pages/productDetails/ProductDetails';
 import Gadgets from './pages/Gadgets';
 import Cart from './pages/cart/Cart';
+import OtpPage from './components/OtpPage';
+
+
 function App() {
 
   return (
@@ -31,6 +34,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/cart' element={<Cart />} />
           <Route path={`/product/:productId`} element={<ProductDetails />} />
+          <Route path='/user/otp' element={<OtpPage />} />
           <Route>404 Page Not Found!</Route>
         </Routes>
         <Footer />

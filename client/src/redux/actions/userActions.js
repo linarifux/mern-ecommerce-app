@@ -8,3 +8,10 @@ export const setCurrentUser = user => {
         payload: user
     }
 }
+
+export const setOtp = otp => {
+    return {
+        type: actionTypes.SET_OTP,
+        payload: otp
+    }
+}

@@ -7,8 +7,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const Mynav = () => {
+
+  const currentUser = useSelector(state => state.setCurrentUserReducer)
+  useEffect(() => { console.log(currentUser); }, [currentUser])
   return (
     <Navbar bg="light" expand="lg" sticky='top'>
       <Container>
